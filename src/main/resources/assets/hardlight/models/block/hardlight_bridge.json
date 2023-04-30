@@ -5,7 +5,7 @@
 	"textures": {
 		"0": "hardlight:block/hardlight_block",
 		"1": "hardlight:block/hardlight_bridge_side",
-		"particle": "hardlight:block/hardlight_bridge"
+		"particle": "hardlight:block/hardlight_block"
 	},
 	"elements": [
 		{

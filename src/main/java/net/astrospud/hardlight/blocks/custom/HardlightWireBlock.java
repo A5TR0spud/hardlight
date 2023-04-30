@@ -1,4 +1,4 @@
-package net.astrospud.hardlight.blocks;
+package net.astrospud.hardlight.blocks.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

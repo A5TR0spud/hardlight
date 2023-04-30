@@ -1,5 +1,6 @@
 package net.astrospud.hardlight;
 
+import net.astrospud.hardlight.blocks.HLBlockEntities;
 import net.astrospud.hardlight.blocks.HLBlocks;
 import net.astrospud.hardlight.items.HLItems;
 import net.fabricmc.api.ModInitializer;
@@ -24,5 +25,6 @@ public class HardlightMod implements ModInitializer {
 
 		HLItems.init();
 		HLBlocks.init();
+		HLBlockEntities.init();
 	}
 }

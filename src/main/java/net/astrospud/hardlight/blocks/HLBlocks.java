@@ -1,6 +1,9 @@
 package net.astrospud.hardlight.blocks;
 
 import net.astrospud.hardlight.HardlightMod;
+import net.astrospud.hardlight.blocks.custom.HardlightBridgeBlock;
+import net.astrospud.hardlight.blocks.custom.HardlightBridgeItem;
+import net.astrospud.hardlight.blocks.custom.HardlightWireBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -67,8 +70,8 @@ public class HLBlocks {
                 .solidBlock(HLBlocks::never)
                 .suffocates(HLBlocks::never)
                 .blockVision(HLBlocks::never)));
-        HardlightMod.LOGGER.info("registered blocks");
         HARDLIGHT_BRIDGE_ITEM = (BlockItem) registerBlockItem(new HardlightBridgeItem(HARDLIGHT_BRIDGE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)), "hardlight_bridge");
+        HardlightMod.LOGGER.info("registered blocks");
     }
 
     private static boolean never(BlockState blockState, BlockView blockView, BlockPos pos) {
