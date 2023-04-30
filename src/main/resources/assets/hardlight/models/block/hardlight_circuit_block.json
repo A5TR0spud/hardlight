@@ -1,0 +1,7 @@
+{
+	"ambientocclusion": false,
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"all": "hardlight:block/hardlight_circuit_block"
+	}
+}

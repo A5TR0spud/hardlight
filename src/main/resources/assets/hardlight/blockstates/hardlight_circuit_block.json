@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "hardlight:block/hardlight_circuit_block"
+    }
+  }
+}

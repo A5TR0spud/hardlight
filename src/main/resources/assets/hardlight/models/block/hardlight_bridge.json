@@ -1,0 +1,34 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "hardlight:block/hardlight_block",
+		"1": "hardlight:block/hardlight_bridge_side",
+		"particle": "hardlight:block/hardlight_bridge"
+	},
+	"elements": [
+		{
+			"from": [0, 14, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 2], "texture": "#1", "cullface":  "north"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#1", "cullface":  "east"},
+				"south": {"uv": [0, 0, 16, 2], "texture": "#1", "cullface":  "south"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#1", "cullface":  "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [16, 14, 0],
+			"to": [0, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 0, 2], "texture": "#1", "cullface":  "north"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#1", "cullface":  "west"},
+				"south": {"uv": [0, 0, 0, 2], "texture": "#1", "cullface":  "south"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#1", "cullface":  "east"}
+			}
+		}
+	]
+}

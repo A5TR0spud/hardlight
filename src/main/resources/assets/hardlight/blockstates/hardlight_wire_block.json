@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "hardlight:block/hardlight_wire_block_down"
+    },
+    "facing=east": {
+      "model": "hardlight:block/hardlight_wire_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "hardlight:block/hardlight_wire_block"
+    },
+    "facing=south": {
+      "model": "hardlight:block/hardlight_wire_block",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "hardlight:block/hardlight_wire_block_up"
+    },
+    "facing=west": {
+      "model": "hardlight:block/hardlight_wire_block",
+      "y": 270
+    }
+  }
+}
