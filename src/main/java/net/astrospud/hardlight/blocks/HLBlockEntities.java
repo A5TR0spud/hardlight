@@ -1,9 +1,8 @@
 package net.astrospud.hardlight.blocks;
 
 import net.astrospud.hardlight.HardlightMod;
-import net.astrospud.hardlight.blocks.blockentities.HardlightBridgeBlockEntity;
+import net.astrospud.hardlight.blocks.entity.HardlightBridgeBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;

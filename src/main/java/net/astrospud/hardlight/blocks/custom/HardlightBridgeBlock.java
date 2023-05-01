@@ -1,22 +1,23 @@
 package net.astrospud.hardlight.blocks.custom;
 
-import net.astrospud.hardlight.blocks.blockentities.HardlightBridgeBlockEntity;
+import net.astrospud.hardlight.blocks.HLBlockEntities;
+import net.astrospud.hardlight.blocks.HLBlocks;
+import net.astrospud.hardlight.blocks.entity.HardlightBridgeBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.pathing.NavigationType;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class HardlightBridgeBlock extends BlockWithEntity implements BlockEntityProvider {
     public HardlightBridgeBlock(Settings settings) {
@@ -54,6 +55,29 @@ public class HardlightBridgeBlock extends BlockWithEntity implements BlockEntity
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        Entity entity = ((EntityShapeContext)context).getEntity();
+        if (entity == null)
+            return super.getCollisionShape(state, world, pos, context);
+        Optional<HardlightBridgeBlockEntity> op = world.getBlockEntity(pos, HLBlockEntities.HARDLIGHT_BRIDGE);
+        if (op.isEmpty())
+            return super.getCollisionShape(state, world, pos, context);
+        HardlightBridgeBlockEntity be = op.get();
+        if (entity.isPlayer()) {
+            if (be.settings.exceptPlayerCollide.contains(entity.getUuid()) == be.settings.defaultPlayerCollide)
+                return VoxelShapes.empty();
+        } else if (be.settings.exceptEntityCollide.contains(Registry.ENTITY_TYPE.getId(entity.getType())) == be.settings.defaultEntityCollide){
+            return VoxelShapes.empty();
+        }
+        return super.getCollisionShape(state, world, pos, context);
+    }
+
+    @Override
+    public PistonBehavior getPistonBehavior(BlockState state) {
+        return PistonBehavior.DESTROY;
     }
 
     /*@Override

@@ -1,4 +1,4 @@
-package net.astrospud.hardlight.blocks.blockentities;
+package net.astrospud.hardlight.blocks.entity;
 
 import net.astrospud.hardlight.blocks.HLBlockEntities;
 import net.astrospud.hardlight.blocks.HardlightSettings;

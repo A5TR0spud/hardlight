@@ -4,7 +4,6 @@
   "package": "net.astrospud.hardlight.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "HLAbstractBlockMixin"
   ],
   "client": [
   ],
