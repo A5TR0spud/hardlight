@@ -11,7 +11,9 @@ import net.minecraft.nbt.NbtString;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class HardlightBridgeBlockEntity extends BlockEntity {
@@ -21,12 +23,15 @@ public class HardlightBridgeBlockEntity extends BlockEntity {
         super(HLBlockEntities.HARDLIGHT_BRIDGE, pos, state);
     }
 
+
+    public int getColor() {
+        return settings.color;
+    }
+
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
-        nbt.putFloat("red", settings.red);
-        nbt.putFloat("green", settings.green);
-        nbt.putFloat("blue", settings.blue);
+        nbt.putInt("color", settings.color);
         nbt.putBoolean("defaultEntityCollide", settings.defaultEntityCollide);
         nbt.putBoolean("defaultPlayerCollide", settings.defaultPlayerCollide);
 
@@ -40,7 +45,7 @@ public class HardlightBridgeBlockEntity extends BlockEntity {
         NbtList exceptPlayers = new NbtList();
         for (UUID i: settings.exceptPlayerCollide) {
             NbtString s = NbtString.of(i.toString());
-            exceptEntities.add(s);
+            exceptPlayers.add(s);
         }
         nbt.put("exceptPlayers", exceptPlayers);
     }
@@ -48,9 +53,7 @@ public class HardlightBridgeBlockEntity extends BlockEntity {
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
-        settings.red = nbt.getFloat("red");
-        settings.green = nbt.getFloat("green");
-        settings.blue = nbt.getFloat("blue");
+        settings.color = nbt.getInt("color");
         settings.defaultEntityCollide = nbt.getBoolean("defaultEntityCollide");
         settings.defaultPlayerCollide = nbt.getBoolean("defaultPlayerCollide");
 

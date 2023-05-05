@@ -9,13 +9,11 @@ import java.util.List;
 import java.util.UUID;
 
 public class HardlightSettings {
-    public boolean defaultEntityCollide = false;
-    public List<Identifier> exceptEntityCollide = new ArrayList<>();
-    public boolean defaultPlayerCollide = true;
-    public List<UUID> exceptPlayerCollide = new ArrayList<>();
-    public float red = 1f;
-    public float green = 1f;
-    public float blue = 1f;
+    public boolean defaultEntityCollide;
+    public List<Identifier> exceptEntityCollide = new ArrayList<>();;
+    public boolean defaultPlayerCollide;
+    public List<UUID> exceptPlayerCollide = new ArrayList<>();;
+    public int color;
 
     public HardlightSettings() {
         /*exceptEntityCollide.add(Registry.ENTITY_TYPE.getId(EntityType.MINECART));
@@ -27,5 +25,34 @@ public class HardlightSettings {
         exceptEntityCollide.add(Registry.ENTITY_TYPE.getId(EntityType.HOPPER_MINECART));
         exceptEntityCollide.add(Registry.ENTITY_TYPE.getId(EntityType.SPAWNER_MINECART));
         exceptEntityCollide.add(Registry.ENTITY_TYPE.getId(EntityType.TNT_MINECART));*/
+    }
+
+
+    public void setDefaults() {
+        setDefaultEntityCollide();
+        setDefaultExceptEntity();
+        setDefaultPlayerCollide();
+        setDefaultExceptPlayer();
+        setDefaultColor();
+    }
+
+    public void setDefaultExceptEntity() {
+        exceptEntityCollide = new ArrayList<>();
+    }
+
+    public void setDefaultExceptPlayer() {
+        exceptPlayerCollide = new ArrayList<>();
+    }
+
+    public void setDefaultColor() {
+        color = 0xffffff;
+    }
+
+    public void setDefaultEntityCollide() {
+        defaultEntityCollide = false;
+    }
+
+    public void setDefaultPlayerCollide() {
+        defaultEntityCollide = true;
     }
 }

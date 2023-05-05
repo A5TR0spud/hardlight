@@ -3,6 +3,7 @@ package net.astrospud.hardlight.blocks.custom;
 import net.astrospud.hardlight.blocks.HLBlockEntities;
 import net.astrospud.hardlight.blocks.HLBlocks;
 import net.astrospud.hardlight.blocks.entity.HardlightBridgeBlockEntity;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.piston.PistonBehavior;
@@ -79,27 +80,6 @@ public class HardlightBridgeBlock extends BlockWithEntity implements BlockEntity
     public PistonBehavior getPistonBehavior(BlockState state) {
         return PistonBehavior.DESTROY;
     }
-
-    /*@Override
-    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()) {
-            super.onStateReplaced(state, world, pos, newState, moved);
-        }
-    }*/
-
-    /*@Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos,
-                              PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
-
-            if (screenHandlerFactory != null) {
-                player.openHandledScreen(screenHandlerFactory);
-            }
-        }
-
-        return ActionResult.SUCCESS;
-    }*/
 
     @Nullable
     @Override
