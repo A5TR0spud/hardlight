@@ -3,6 +3,7 @@ package net.astrospud.hardlight;
 import net.astrospud.hardlight.blocks.HLBlockEntities;
 import net.astrospud.hardlight.blocks.HLBlocks;
 import net.astrospud.hardlight.items.HLItems;
+import net.astrospud.hardlight.particles.HLParticles;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ public class HardlightMod implements ModInitializer {
 
 		LOGGER.info("Hello world!");
 
+		HLParticles.init();
 		HLItems.init();
 		HLBlocks.init();
 		HLBlockEntities.init();

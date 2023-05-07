@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "hardlight:hardlight_prism"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#X#",
+    "#r#"
+  ],
+  "result": {
+    "item": "hardlight:hardlight_thruster"
+  }
+}

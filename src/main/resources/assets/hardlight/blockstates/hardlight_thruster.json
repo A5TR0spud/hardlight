@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "hardlight:block/hardlight_thruster",
+      "x": 90
+    },
+    "facing=north": {
+      "model": "hardlight:block/hardlight_thruster",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "hardlight:block/hardlight_thruster",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "hardlight:block/hardlight_thruster"
+    },
+    "facing=west": {
+      "model": "hardlight:block/hardlight_thruster",
+      "y": 90
+    },
+    "facing=down": {
+      "model": "hardlight:block/hardlight_thruster",
+      "x": 270
+    }
+  }
+}

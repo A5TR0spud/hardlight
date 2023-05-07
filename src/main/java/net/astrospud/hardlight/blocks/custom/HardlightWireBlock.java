@@ -28,9 +28,4 @@ public class HardlightWireBlock extends Block {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
-
-    @Override
-    protected void spawnBreakParticles(World world, PlayerEntity player, BlockPos pos, BlockState state) {
-        super.spawnBreakParticles(world, player, pos, state);
-    }
 }
