@@ -71,9 +71,11 @@ public class IonRingParticle extends SpriteBillboardParticle {
         double velZ = this.velocityZ;
 
         float yaw = (float) Math.atan2(velX, velZ);
-        float pitch = (float) Math.atan2(-velY, Math.signum(velZ) * Math.sqrt(velX*velX + velZ*velZ));
+        float pitch = (float) Math.atan2(-velY, Math.sqrt(velX*velX + velZ*velZ));
+        pitch *= (float) Math.signum(velZ) == 0 ? 1 : (float) Math.signum(velZ);
 
-        Quaternion q = Quaternion.fromEulerXyz(pitch, yaw, 0);
+        Quaternion q = Quaternion.fromEulerXyz(0, yaw, 0);
+        q.hamiltonProduct(Quaternion.fromEulerXyz(pitch, 0, 0));
 
         this.buildGeometry(vertexConsumer, camera, tickDelta, quaternion -> {
             quaternion.set(q.getX(), q.getY(), q.getZ(), q.getW());

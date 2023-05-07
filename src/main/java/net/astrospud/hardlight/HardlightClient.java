@@ -3,6 +3,7 @@ package net.astrospud.hardlight;
 import net.astrospud.hardlight.blocks.HLBlocks;
 import net.astrospud.hardlight.blocks.entity.HardlightBridgeBlockEntity;
 import net.astrospud.hardlight.particles.HLParticles;
+import net.astrospud.hardlight.particles.IonParticle;
 import net.astrospud.hardlight.particles.IonRingParticle;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -31,5 +32,6 @@ public class HardlightClient implements ClientModInitializer {
         }, HLBlocks.HARDLIGHT_BRIDGE);
 
         ParticleFactoryRegistry.getInstance().register(HLParticles.ION_RING_PARTICLE, IonRingParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(HLParticles.ION_PARTICLE, IonParticle.Factory::new);
     }
 }
