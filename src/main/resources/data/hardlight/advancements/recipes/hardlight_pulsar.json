@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hardlight:hardlight_thruster"
+        "recipe": "hardlight:hardlight_pulsar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hardlight:hardlight_thruster"
+      "hardlight:hardlight_pulsar"
     ]
   }
 }

@@ -3,7 +3,7 @@ package net.astrospud.hardlight.blocks;
 import net.astrospud.hardlight.HardlightMod;
 import net.astrospud.hardlight.blocks.custom.HardlightBridgeBlock;
 import net.astrospud.hardlight.blocks.custom.HardlightBridgeItem;
-import net.astrospud.hardlight.blocks.custom.HardlightThrusterBlock;
+import net.astrospud.hardlight.blocks.custom.HardlightPulsarBlock;
 import net.astrospud.hardlight.blocks.custom.HardlightWireBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -23,7 +23,7 @@ public class HLBlocks {
     public static Block HARDLIGHT_CIRCUIT_BLOCK;
     public static Block HARDLIGHT_BRIDGE;
     public static BlockItem HARDLIGHT_BRIDGE_ITEM;
-    public static Block HARDLIGHT_THRUSTER;
+    public static Block HARDLIGHT_PULSAR;
 
     public static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(block, group, name);
@@ -52,7 +52,7 @@ public class HLBlocks {
                 .emissiveLighting(HLBlocks::always)
                 .postProcess(HLBlocks::always)
                 .mapColor(MapColor.DARK_AQUA)), ItemGroup.BUILDING_BLOCKS);
-        HARDLIGHT_THRUSTER = registerBlock("hardlight_thruster", new HardlightThrusterBlock(FabricBlockSettings.of(Material.GLASS)
+        HARDLIGHT_PULSAR = registerBlock("hardlight_pulsar", new HardlightPulsarBlock(FabricBlockSettings.of(Material.GLASS)
                 .strength(0.3f)
                 .sounds(BlockSoundGroup.GLASS)
                 .luminance(state -> 3)

@@ -6,18 +6,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.FacingBlock;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.particle.ShriekParticleEffect;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 
-public class HardlightThrusterBlock extends Block {
+public class HardlightPulsarBlock extends Block {
     public static final DirectionProperty FACING = FacingBlock.FACING;
-    public HardlightThrusterBlock(Settings settings) {
+    public HardlightPulsarBlock(Settings settings) {
         super(settings);
         this.setDefaultState((BlockState)this.stateManager.getDefaultState().with(FACING, Direction.NORTH));
     }

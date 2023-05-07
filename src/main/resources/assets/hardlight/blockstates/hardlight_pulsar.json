@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "hardlight:block/hardlight_pulsar",
+      "x": 90
+    },
+    "facing=north": {
+      "model": "hardlight:block/hardlight_pulsar",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "hardlight:block/hardlight_pulsar",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "hardlight:block/hardlight_pulsar"
+    },
+    "facing=west": {
+      "model": "hardlight:block/hardlight_pulsar",
+      "y": 90
+    },
+    "facing=down": {
+      "model": "hardlight:block/hardlight_pulsar",
+      "x": 270
+    }
+  }
+}
